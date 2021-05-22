@@ -1,19 +1,26 @@
+#import everything in tkinter
 from tkinter import *
 root = Tk()
+#Title and size of calculator
 root.title("Simple Calculator")
 root.geometry = '200x200'
 
+#how big the grid is
 e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
+#what happens when you click on a button
 def button_click(number):
     #e.delete(0, END)
     current = e.get()
     e.delete(0, END)
     e.insert(0, str(current) + str(number))
 
+#what happens when you press the clear button
 def button_clear():
     e.delete(0, END)
+
+#What happens when you press the add button    
 def button_add():
     first_number = e.get()
     global f_num
